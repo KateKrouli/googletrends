@@ -7,13 +7,15 @@
     "watch:lang": "esbuild --bundle src/js/lang.js --outfile=dist/lang.js --watch",
     "watch:html": "node watch-html.js",
     "serve": "live-server dist --port=5000 --watch=dist",
-    "copy:images": "mkdir -p dist/images && cp -r src/images/* dist/images/",
+    "copy:images": "mkdir -p dist/images && (cp -r src/images/* dist/images/ 2>/dev/null || true)",
     "copy:components": "cp -r src/components dist/components",
     "build": "esbuild src/js/main.js --bundle --outfile=dist/main.js && esbuild src/js/lang.js --bundle --outfile=dist/lang.js && npx posthtml src/index.html -o dist/index.html && cp -r src/scss dist/scss && npm run copy:images && npm run copy:components",
-    "dev": "npm-run-all --parallel watch:scss watch:js watch:lang watch:html serve copy:images copy:components"
+    "dev": "npm-run-all --parallel watch:scss watch:js watch:lang watch:html watch:images serve copy:images copy:components",
+    "watch:images": "chokidar 'src/images/**/*' -c 'npm run copy:images'"
   },
   "devDependencies": {
     "chokidar": "^3.5.3",
+    "chokidar-cli": "^3.0.0",
     "esbuild": "^0.18.0",
     "live-server": "^1.2.2",
     "npm-run-all": "^4.1.5",

@@ -3,21 +3,17 @@
 const translations = {
   en: {
     header: {
-      title: "Welcome to our site!",
-      menuHome: "Home",
-      menuAbout: "About",
-      menuContact: "Contact"
+      menuHome: "Trending",
+      menuAbout: "News",
+      menuContact: "About"
     },
     footer: {
       copyright: "All rights reserved."
     },
    main: {
-        greeting: { html: "<span>Hello, user!</span> Welcome to the site." },
-        description: "This is the main content area.",
-        button: "Get Bonus",
-        bonus: "Your bonus is active!",
-        erroreSpan: "Test",
-        erroreSpan2: "Test"
+        title: "Go OG — Follow the Trends",
+        description: "A community-driven platform discovering and tracking sports content across MENA.",
+        button: "Search Trends & News",
       },
     xbet: {
       title: "Strong Partnerships with a Strong Brand",
@@ -47,21 +43,17 @@ const translations = {
   }, 
   tr: {
     header: {
-      title: "Sitemize hoş geldiniz!",
       menuHome: "Ana Sayfa",
       menuAbout: "Hakkımızda",
       menuContact: "İletişim"
     },
     footer: {
-      copyright: "Tüm hakları saklıdır."
+      copyright: "Tüm hakları saklıdır." 
     },
     main: {
-        greeting: { html: "<span>Site engellendi,</span> ama kuponun güvende" },
+        title: "Site engellendi, ama kuponun güvende",
         description: "Çalışan bağlantıyı senin için bulduk — üstelik hesabına özel bir bonus hazırladık.",
         button: "Bonusu Al",
-        bonus: "+100 ₺ bonus",
-        erroreSpan: "Engellendi",
-        erroreSpan2: "BTK kararına göre hizmete erişim"
       },
     xbet: {
       title: "Güçlü Markayla Güçlü Ortaklıklar",
@@ -127,19 +119,15 @@ function applyTranslations(lang) {
   // Footer
   document.querySelectorAll('[data-i18n="footer.copyright"]').forEach(el => el.textContent = t.footer.copyright);
   // Main
-  document.querySelectorAll('[data-i18n="main.greeting"]').forEach(el => {
-    if (typeof t.main.greeting === 'object' && t.main.greeting.html) {
-      el.innerHTML = t.main.greeting.html;
+  document.querySelectorAll('[data-i18n="main.title"]').forEach(el => {
+    if (typeof t.main.title === 'object' && t.main.title.html) {
+      el.innerHTML = t.main.title.html;
     } else {
-      el.textContent = t.main.greeting;
+      el.textContent = t.main.title;
     }
   });
   document.querySelectorAll('[data-i18n="main.description"]').forEach(el => el.textContent = t.main.description);
   document.querySelectorAll('[data-i18n="main.button"]').forEach(el => el.textContent = t.main.button);
-  document.querySelectorAll('[data-i18n="main.bonus"]').forEach(el => el.textContent = t.main.bonus);
-  document.querySelectorAll('[data-i18n="main.erroreSpan"]').forEach(el => el.textContent = t.main.erroreSpan);
-  document.querySelectorAll('[data-i18n="main.erroreSpan2"]').forEach(el => el.textContent = t.main.erroreSpan2);
-
   // Infographics
   document.querySelectorAll('[data-i18n="infographics.title"]').forEach(el => el.textContent = t.infographics.title);
   document.querySelectorAll('[data-i18n="infographics.item1"]').forEach(el => el.textContent = t.infographics.item1);
