@@ -193,6 +193,65 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 </div>   
+      <div class="top-trends main-width">
+    <div class="main-title">
+        <h2>Top Trends</h2>
+        <span>Real-time tracking of the hottest sports topics across </span>
+    </div>
+    <div class="top-trends__container">
+        <div class="top-trends__list">
+            <div class="top-trends__title">
+                <img src="images/icon-turkey.webp"> Turkey
+            </div>
+            <ul>
+                <li *ngFor="let trend of trends">
+                <a [href]="trend.url" class="top-trends__item"><div>{{ trend.name }}</div>
+                    <span>{{ trend.tweet_volume | number }}</span>
+                </a>
+            </li>
+             <li *ngFor="let trend of trends">
+                <a [href]="trend.url" class="top-trends__item top-trends__item--custom"><div>{{ trend.name }}</div>
+                    <span>{{ trend.tweet_volume | number }}</span>
+                </a>
+            </li>
+            </ul>
+        </div>
+        <div class="top-trends__list">
+            <div class="top-trends__title">
+                <img src="images/icon-az.webp"> Azerbaijan
+            </div>
+            <ul>
+                <li *ngFor="let trend of trends">
+                <a [href]="trend.url" class="top-trends__item"><div>{{ trend.name }}</div>
+                    <span>{{ trend.tweet_volume | number }}</span>
+                </a>
+            </li>
+             <li *ngFor="let trend of trends">
+                <a [href]="trend.url" class="top-trends__item top-trends__item--custom"><div>{{ trend.name }}</div>
+                    <span>{{ trend.tweet_volume | number }}</span>
+                </a>
+            </li>
+            </ul>
+        </div>
+        <div class="top-trends__list">
+            <div class="top-trends__title">
+                <img src="images/icon-leb.webp"> Lebanon
+            </div>
+            <ul>
+                <li *ngFor="let trend of trends">
+                <a [href]="trend.url" class="top-trends__item"><div>{{ trend.name }}</div>
+                    <span>{{ trend.tweet_volume | number }}</span>
+                </a>
+            </li>
+             <li *ngFor="let trend of trends">
+                <a [href]="trend.url" class="top-trends__item top-trends__item--custom"><div>{{ trend.name }}</div>
+                    <span>{{ trend.tweet_volume | number }}</span>
+                </a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</div> 
   </main> 
 
   <footer>

@@ -1,3 +1,6 @@
+import './trends.js';
+import './lang.js';
+import './swiper-init.js'
 
 // Динамически подгружать блок статей для выбранного языка через fetch
 async function showArticlesByLang(lang) {
